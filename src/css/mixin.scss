@@ -1,0 +1,36 @@
+$imgUrl:'../img/';
+
+
+@mixin onePx() {
+    content: "";
+    pointer-events: none;
+    box-sizing: border-box;
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+    top: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+@mixin backImage($imgurl, $position, $size) {
+    background: $imgurl no-repeat $position;
+    background-size: $size;
+}
+
+@mixin borBT($bgCol, $col, $position) {
+    background: $bgCol -webkit-linear-gradient($position, $col, $col 50%, transparent 0%) no-repeat left $position;
+    background: $bgCol -o-linear-gradient($position, $col, $col 50%, transparent 0%) no-repeat left $position;
+    background: $bgCol linear-gradient($position, $col, $col 50%, transparent 0%) no-repeat left $position;
+    background-size: 100% 1px;
+}
+
+@mixin borLR($bgCol, $col, $position) {
+    background: $bgCol -webkit-linear-gradient($position, $col, $col 50%, transparent 0%) no-repeat $position top;
+    background: $bgCol -o-linear-gradient($position, $col, $col 50%, transparent 0%) no-repeat $position top;
+    background: $bgCol linear-gradient($position, $col, $col 50%, transparent 0%) no-repeat $position top;
+    background-size: 1px 100%;
+}
